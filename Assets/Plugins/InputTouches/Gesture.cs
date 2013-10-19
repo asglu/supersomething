@@ -218,6 +218,7 @@ public class Gesture : MonoBehaviour {
 	}
 	
 	public static void Dragging(DragInfo dragInfo){
+		//Debug.Log ("Dragging: " + dragInfo.fingerCount);
 		if(dragInfo.fingerCount>1){
 			if(dragInfo.fingerCount==2) DFDragging(dragInfo); //obsolete function call
 			if(onMFDraggingE!=null) onMFDraggingE(dragInfo);

@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class DragDetector_AndroidFix : MonoBehaviour {
-
+public class DragDetector_AndroidFix : MonoBehaviour
+{
 	private List<int> fingerIndex=new List<int>();
 	private List<int> mouseIndex=new List<int>();
 	
