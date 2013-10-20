@@ -14,6 +14,10 @@ public class MouseOrbitImproved : MonoBehaviour {
  
     public float distanceMin = .5f;
     public float distanceMax = 15f;
+
+	public float XModifier = 0.0f;
+	public float YModifier = 0.0f;
+	public float PIXEL_DENSITY = Screen.width/480.0f; //1:1 density on an iPhone 3s or lower
  
     float x = 0.0f;
     float y = 0.0f;
@@ -29,30 +33,33 @@ public class MouseOrbitImproved : MonoBehaviour {
             rigidbody.freezeRotation = true;
 	}
  
-    void LateUpdate () {
-    if (target) {
-        x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
-        y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
- 
-        y = ClampAngle(y, yMinLimit, yMaxLimit);
- 
-        Quaternion rotation = Quaternion.Euler(y, x, 0);
- 
-        distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
- 
-        RaycastHit hit;
-        if (Physics.Linecast (target.position, transform.position, out hit)) {
-                distance -=  hit.distance;
-        }
-        Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
-        Vector3 position = rotation * negDistance + target.position;
- 
-        transform.rotation = rotation;
-        transform.position = position;
- 
-    }
- 
-}
+    void LateUpdate ()
+	{
+		if (target)
+		{
+			x += XModifier * xSpeed * distance * 0.02f;
+			y -= YModifier * ySpeed * distance * 0.02f;
+
+			XModifier = 0;
+			//Debug.Log("Mouse x: "+Input.GetAxis("Mouse X"));
+	 
+	        y = ClampAngle(y, yMinLimit, yMaxLimit);
+	 
+	        Quaternion rotation = Quaternion.Euler(y, x, 0);
+	 
+	        distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
+	 
+	        RaycastHit hit;
+	        if (Physics.Linecast (target.position, transform.position, out hit)) {
+	                distance -=  hit.distance;
+	        }
+	        Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
+	        Vector3 position = rotation * negDistance + target.position;
+	 
+	        transform.rotation = rotation;
+	        transform.position = position;
+		}
+	}
  
     public static float ClampAngle(float angle, float min, float max)
     {
