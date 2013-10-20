@@ -1,30 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MouseOrbitImproved.cs">
     <Files>
       <File FileName="Assets/Scripts/GravityScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MouseOrbitImproved.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/InputTouches/DragDetector_AndroidFix.cs" Line="7" Column="48" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MouseOrbitImproved.cs" Line="19" Column="39" />
+      <File FileName="Assets/Plugins/InputTouches/DragDetector_AndroidFix.cs" Line="176" Column="33" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="25" Column="40" />
+      <File FileName="Assets/Plugins/InputTouches/Gesture.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="GameController.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Plugins" expanded="True">
-                <Node name="InputTouches" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
+        <State expanded="True" selected="True" />
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />
@@ -35,7 +21,11 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Volumes/Leandro's Disk/Workspace/Supersomething/Assets/Plugins/InputTouches/DragDetector_AndroidFix.cs" line="133" column="14" />
+      <Breakpoint file="/Volumes/Leandro's Disk/Workspace/Supersomething/Assets/Plugins/InputTouches/DragDetector_AndroidFix.cs" line="81" column="15" />
+      <Breakpoint file="/Volumes/Leandro's Disk/Workspace/Supersomething/Assets/Plugins/InputTouches/DragDetector_AndroidFix.cs" line="186" column="15" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
