@@ -1,22 +1,29 @@
 ﻿using UnityEngine;
+using System;
+using UnityEditor;
 
 public class GameController : MonoBehaviour
 {
 	bool debug = false;
 
+	public GameObject Megaman;
+	MouseOrbitImproved orbit;
+	float megamanInitialX;
+	float megamanInitialZ;
+
 	float yTouchLeft = 0.5f;
 	float yTouchRight = 0.5f;
 	float speedModifier = 0.5f;
 	float directionModifier = 0.0f;
-
-	MouseOrbitImproved orbit;
-
+	
 	void Start ()
 	{
 		Gesture.onDraggingStartE += DraggingStartHandler;
 		Gesture.onDraggingE += DraggingHandler;
 		Gesture.onDraggingEndE += DraggingEndHandler;
 		orbit = gameObject.GetComponent<MouseOrbitImproved>();
+		megamanInitialX = Megaman.transform.localPosition.x;
+		megamanInitialZ = Megaman.transform.localPosition.z;
 	}
 
 	// Update is called once per frame
@@ -57,8 +64,14 @@ public class GameController : MonoBehaviour
 
 		directionModifier = yTouchLeft - yTouchRight;
 		Debug.Log("Direction: " + directionModifier );
+		
+		Debug.Log("speedModifier: " + speedModifier );
 
-
+		Vector3 pos = Megaman.transform.localPosition;
+		pos.x = megamanInitialX + directionModifier*-1;
+		float offsettedSpeedModifier = speedModifier - 0.5f;
+		pos.z = megamanInitialZ + offsettedSpeedModifier;
+		Megaman.transform.localPosition = pos;
 		//Debug.Log("orbit.XModifier: "+orbit.XModifier);
 	}
 
